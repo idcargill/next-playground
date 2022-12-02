@@ -7,7 +7,7 @@ import { SomeComponent } from '../sections/sharedComponents/SomeComponent'
 import { RefExample } from '../sections/sharedComponents/useRef';
 import UserInfoContainer from '../sections/sharedComponents/UserInfoContainer'
 import Link from 'next/link'
-
+import ContextDisplay from '../sections/context/ContextDisplay'
 
 // import * as env from 'env-var';
 
@@ -49,6 +49,8 @@ const Home = (props:any) => {
 
 
       <UserInfoContainer />
+
+      <ContextDisplay/>
 
       <main className={styles.main}>
         <Title />
