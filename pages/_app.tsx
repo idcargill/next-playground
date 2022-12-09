@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app';
-import TestingProvider  from '../sections/sharedComponents/UserProvider';
+import TestingProvider  from '../sections/indexPage/UserProvider';
 import { UserProvider } from '@auth0/nextjs-auth0';
 import { SampleContextProvider } from '../sections/context/sampleContext';
 

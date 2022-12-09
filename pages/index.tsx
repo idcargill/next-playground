@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import FishImage from '../sections/sharedComponents/FishImage'
-import DadJoke from '../sections/sharedComponents/DadJokeContainer'
-import { SomeComponent } from '../sections/sharedComponents/SomeComponent'
-import { RefExample } from '../sections/sharedComponents/useRef';
-import UserInfoContainer from '../sections/sharedComponents/UserInfoContainer'
+import FishImage from '../sections/indexPage/FishImage'
+import DadJoke from '../sections/indexPage/DadJokeContainer'
+import { SomeComponent } from '../sections/indexPage/SomeComponent'
+import { RefExample } from '../sections/indexPage/useRef';
+import UserInfoContainer from '../sections/indexPage/UserInfoContainer'
 import Link from 'next/link'
 import ContextDisplay from '../sections/context/ContextDisplay'
 

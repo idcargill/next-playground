@@ -1,0 +1,67 @@
+.page_container {
+  padding: 5px 30px;
+  /* margin: auto; */
+  background-color: rgb(205, 253, 237);
+  height: 100vh;
+}
+
+.list_container {
+  border: 2px solid gray;
+  box-shadow: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 45%;
+  margin: auto;
+}
+
+.list_container:hover {
+  background-color: beige;
+}
+
+.list_container_item {
+  cursor: pointer;
+}
+
+.button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(255, 170, 255);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+
+.ordered_list {
+  border: 1px solid red;
+  background-color: aliceblue;
+}
+
+.ordered_list:hover {
+  cursor: pointer;
+}
+
+
+@keyframes explode_text {
+  from {font-size: 16px;}
+  to {font-size: 36px;}
+}
+
+
+@keyframes moveToCenter {
+  0% {left: 0px;}
+  100% {left: 600px;}
+}
+
+.magnify_list_item {
+  position: relative;
+  animation-name: moveToCenter;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+}
