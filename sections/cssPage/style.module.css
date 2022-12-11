@@ -1,0 +1,41 @@
+.list_item {
+  font-size: 48px;
+  padding: 10px;
+  border: 1px solid green;
+  /* animation: fade_in 2s; */
+}
+
+@keyframes fade_in {
+  from {opacity: 0 };
+  to { opacity: 1};
+  
+}
+
+.name_list {
+  list-style-type: none;
+}
+
+
+
+
+
+
+.list_item-enter {
+  /* opacity: 0; */
+  color: rgb(90, 228, 25);
+}
+
+.list_item-enter-active {
+  opacity: 1;
+  color: red;
+  transition: color 1500 ms;
+}
+
+/* .list_itme-exit {
+  opacity: 1;
+}
+
+.list_item-exit-active {
+  opacity: 0;
+  transition: opacity 1500ms ease-out;
+} */
