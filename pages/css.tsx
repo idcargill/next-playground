@@ -28,7 +28,6 @@ type ListItemProps = {
 
 const ListItem = React.forwardRef((props:any, ref) => (
   <li 
-    className={styles.list_item} 
     ref={ref} 
     onClick={props.onClick}
     id={props.id}
@@ -50,6 +49,7 @@ class CssPage extends React.Component<State,Props> {
     super(props);
     this.state = {
       data: data,
+      isEnter: false,
     }
     
     this.itemRef = [];
@@ -75,16 +75,38 @@ class CssPage extends React.Component<State,Props> {
     }
   }
 
+  handeFade = () => {
+    this.setState({ isEnter: !this.state.isEnter });
+  }
+
   render() {
 
     return (
       <>
-      <h1>List Reference</h1>
-        <TransitionGroup component='ul'>
+      <CSSTransition
+        key={'hi'}
+        in={this.state.isEnter}
+        timeout={3000}
+        classNames={{
+          enter: styles['kitten-enter'],
+          enterActive: styles['kitten-enter-active'],
+          enterDone: styles['kitten-enter-done']
+        }}
+      >
+        <h1 className={styles.kitten} onClick={this.handeFade}>List Reference</h1>
+      </CSSTransition>
+      {/* <TransitionGroup className="list">
+      <ul>
         {this.state.data.map((item, idx) => (
-          <CSSTransition key={idx} in={this.state.data} timeout={1500} classNames={styles.list_item}>
+          <CSSTransition 
+            key={item.name}
+            // in={true}
+            // appear={true}
+            timeout={1000}
+            classNames={'kitten'}
+          >
             <ListItem 
-              key={idx} 
+              key={item.name} 
               ref={this.handleRef} 
               name={item.name} 
               id={`${idx}`} 
@@ -92,8 +114,9 @@ class CssPage extends React.Component<State,Props> {
             />
           </CSSTransition>
         ))}
-        </TransitionGroup>
+          </ul>
         <button onClick={this.addData}>add</button>
+      </TransitionGroup> */}
     </>
   )
   
