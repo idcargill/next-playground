@@ -1,0 +1,108 @@
+.list_item {
+  font-size: 48px;
+  padding: 10px;
+  border: 1px solid green;
+  /* animation: fade_in 2s; */
+}
+
+@keyframes fade_in {
+  from {opacity: 0 };
+  to { opacity: 1};
+  
+}
+
+.name_list {
+  list-style-type: none;
+}
+
+.title {
+  margin: auto;
+  text-align: center;
+  border: 1px solid green;
+  padding: 2em;
+}
+
+
+.kitten:hover {
+  cursor: pointer;
+}
+
+.kitten {
+  opacity: 0.2;
+  font-size: 16px;
+}
+
+.kitten-enter {
+  opacity: 0.1;
+}
+
+.kitten-enter-active {
+  opacity: 1;
+  color: red;
+  font-size: 30px;
+  transition: opacity 3000ms, color 3000ms, font-size 3000ms;
+}
+
+.kitten-enter-done {
+  opacity: 1;
+  color: red;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.item {
+  opacity: 1;
+}
+
+.item-enter {
+  opacity: 0;
+  height: 0px;
+}
+
+.item-enter-active {
+  opacity: 0.9;
+  height: 16px;
+  transition: opacity 3000ms, height 2000ms;
+}
+
+.item-enter-end {
+  opacity: 1;
+  height: 16px;
+}
+
+.item-exit {
+  opacity:1;
+}
+
+.item-end {
+  opacity: 1;
+}
+
+.item-exit-active {
+  opacity:0;
+  transition: opacity 1000ms;
+}
+
+.item-exit-end {
+  opacity: 0;
+}
+
+/* 
+enter
+enter-active
+enter-done
+
+exit
+exit-active
+exit-done 
+*/
+
+
+.kitten-exit {
+  opacity: 1;
+}
+
+.kitten-exit-active {
+  opacity: 0;
+  transition: opacity 1500ms ease-out;
+}
