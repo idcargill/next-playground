@@ -27,7 +27,8 @@ type ListItemProps = {
 }
 
 const ListItem = React.forwardRef((props:any, ref) => (
-  <li 
+  <li
+    className={styles.item}
     ref={ref} 
     onClick={props.onClick}
     id={props.id}
@@ -50,6 +51,7 @@ class CssPage extends React.Component<State,Props> {
     this.state = {
       data: data,
       isEnter: false,
+      loadItem: false,
     }
     
     this.itemRef = [];
@@ -64,6 +66,7 @@ class CssPage extends React.Component<State,Props> {
     const id = e.target.id;
     this.setState({
       data : this.state.data.filter((item:any, idx:any) => String(idx) !== id),
+      loadItem: true,
     });
 
   }
@@ -95,28 +98,40 @@ class CssPage extends React.Component<State,Props> {
       >
         <h1 className={styles.kitten} onClick={this.handeFade}>List Reference</h1>
       </CSSTransition>
-      {/* <TransitionGroup className="list">
+      <TransitionGroup className="list">
       <ul>
-        {this.state.data.map((item, idx) => (
-          <CSSTransition 
-            key={item.name}
-            // in={true}
-            // appear={true}
-            timeout={1000}
-            classNames={'kitten'}
-          >
-            <ListItem 
-              key={item.name} 
-              ref={this.handleRef} 
-              name={item.name} 
-              id={`${idx}`} 
-              onClick={this.handleClick}
-            />
-          </CSSTransition>
-        ))}
-          </ul>
+        {this.state.data.lenght < 2
+          ? null
+          : (
+            <>
+          {this.state.data.map((item, idx) => (
+            <CSSTransition 
+              key={item.name}
+              in={true}
+              timeout={1000}
+              classNames={{
+                enter: styles['item-enter'],
+                enterActive: styles['item-enter-active'],
+                enterDone: styles['item-enter-end'],
+                exit: styles['item-exit'],
+                exitActive: styles['item-exit-active'],
+                exitDone: styles['item-exit-end'],
+              }}
+            >
+              <ListItem
+                key={item.name} 
+                ref={this.handleRef} 
+                name={item.name} 
+                id={`${idx}`} 
+                onClick={this.handleClick}
+              />
+            </CSSTransition>
+          ))}
+          </>
+          )}
+        </ul>
         <button onClick={this.addData}>add</button>
-      </TransitionGroup> */}
+      </TransitionGroup>
     </>
   )
   

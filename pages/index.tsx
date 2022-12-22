@@ -11,7 +11,7 @@ import ContextDisplay from '../sections/context/ContextDisplay'
 
 // import * as env from 'env-var';
 
-const DAD_JOKE_API_KEY = process.env.DAD_JOKE_API_KEY;
+const DAD_JOKE_API_KEY = process.env.DAD_JOKE_API_KEY || 'http://www.google.com';
 
 export async function getServerSideProps() {
   return {

@@ -1,0 +1,43 @@
+.list_item {
+  color: red;
+  background-color: none;
+
+}
+
+.list_item_enter {
+  /* animation: fadin 500 ease-in forwards; */
+  animation: fadin 1s ease-in;
+}
+
+.list_item_enter_active {
+  animation: fadin 1s ease-in;
+}
+
+.list_item_exit {
+  color: black;
+}
+
+.list_item_exit_active {
+  animation: fadeout 1s ease-out forwards;
+}
+
+
+@keyframes fadin {
+  0% {
+    opacity: 0;
+    background-color: none;
+  }
+  50% {
+    opacity: 0.8;
+    background-color: aqua;
+  }
+  100% {
+    opacity: 1;
+    background-color: plum;
+  }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
