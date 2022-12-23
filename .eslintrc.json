@@ -1,3 +1,18 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:prettier/recommended"],
+  "env" : {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "no-invalid-this": "off",
+    "no-label-var": "error",
+    "no-undefined": "error",
+    "no-var": "error",
+    "no-extra-parens": "error",
+  }
 }

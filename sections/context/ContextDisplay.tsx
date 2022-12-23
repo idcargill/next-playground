@@ -7,7 +7,6 @@ const ContextDisplay = () => {
   const contextValues= useContext(SampleContext);
   const { name, pet, updateState } = contextValues; 
 
-  console.log(contextValues)
   return (
     <>
       <h3>Context Display</h3>

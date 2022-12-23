@@ -25,7 +25,6 @@ const UserInfoContainer = () => {
   const logUser = () => {
     if (user) {
       const id = getUserId(user);
-      console.log('User ID: ', id);
     }
   }
   

@@ -23,12 +23,6 @@ interface ListProps {
   data: any[];
   onClick: (idx: number) => void;
 }
-
-const enterLog = () => {
-  console.log('entering');
-};
-
-
 const List = ({ data, onClick }: ListProps) => {
   return (
     <>
@@ -40,7 +34,6 @@ const List = ({ data, onClick }: ListProps) => {
             key={`${item}`}
             in={data.length > 0}
             timeout={1000}
-            onEnter={enterLog}
             mountOnEnter
             unmountOnExit
             classNames={{
@@ -50,7 +43,6 @@ const List = ({ data, onClick }: ListProps) => {
               exitActive: `${css.list_item_exit_active}`,
             }}
             >
-            {/* <p onClick={() => onClick(idx)}>hello</p> */}
             <StyledListItem onClick={() => onClick(idx)}>
               {item}
             </StyledListItem>

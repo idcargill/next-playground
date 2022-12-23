@@ -1,6 +1,5 @@
 import React, { MutableRefObject, useRef } from 'react';
 
-
 interface DragonProps {
   name: string;
 }
@@ -17,15 +16,11 @@ class Dragon1 extends React.Component<DragonProps> {
 
   handleClick = () => {
     if (this.targetRef.current) {
-      console.log(this.targetRef.current);
       this.targetRef.current.focus();
     }
   }
 
   render() {
-    console.log('Dragon1 Render');
-
-
     return (
       <div>
         <div style={{ height: '200px', backgroundColor: 'green' }}>

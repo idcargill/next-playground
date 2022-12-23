@@ -5,7 +5,7 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 const ProtectedPage = () => {
 
   return (
-    <h1>This page is protected!</h1>
+    <h1>This page is only visible to logged in users.</h1>
   )
 }
 

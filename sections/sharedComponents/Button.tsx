@@ -15,6 +15,12 @@ const StyledButton = styled.button`
   font-size: 2em;
   border: 1px solid red;
   border-radius: 5px;
+
+  &:active {
+    transform: scale(0.9);
+    opacity: 0.9;
+    border-radius: 10px;
+  }
 `
 
 

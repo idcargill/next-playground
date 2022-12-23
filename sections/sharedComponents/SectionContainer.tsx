@@ -11,10 +11,11 @@ const StyledContainer = styled.div`
 
 interface SectionContainerProps {
   children: JSX.Element | JSX.Element[];
+  name?: string;
 }
 
-const SectionContainer = ({ children }: SectionContainerProps) => (
-  <StyledContainer>
+const SectionContainer = ({ name, children }: SectionContainerProps) => (
+  <StyledContainer id={name}>
     {children}
   </StyledContainer>
 )
