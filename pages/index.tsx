@@ -1,34 +1,34 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import FishImage from '../sections/indexPage/FishImage'
-import DadJoke from '../sections/indexPage/DadJokeContainer'
-import { SomeComponent } from '../sections/indexPage/SomeComponent'
+import React from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import FishImage from '../sections/indexPage/FishImage';
+import DadJoke from '../sections/indexPage/DadJokeContainer';
+import { SomeComponent } from '../sections/indexPage/SomeComponent';
 import { RefExample } from '../sections/indexPage/useRef';
-import UserInfoContainer from '../sections/indexPage/UserInfoContainer'
-import Link from 'next/link'
-import ContextDisplay from '../sections/context/ContextDisplay'
+import UserInfoContainer from '../sections/indexPage/UserInfoContainer';
+import Link from 'next/link';
+import ContextDisplay from '../sections/context/ContextDisplay';
 
-// import * as env from 'env-var';
+const DAD_JOKE_API_KEY: string =
+  process.env.DAD_JOKE_API_KEY ?? 'http://www.google.com';
 
-const DAD_JOKE_API_KEY = process.env.DAD_JOKE_API_KEY || 'http://www.google.com';
-
-export async function getServerSideProps() {
+export async function getServerSideProps(): Promise<any> {
   return {
     props: {
       key: DAD_JOKE_API_KEY,
-      chicken: 'Eggs'
-    }
-  }
+      chicken: 'Eggs',
+    },
+  };
 }
 
-const Title = () => (
+const Title = (): JSX.Element | null => (
   <h1 className={styles.title}>
     Welcome to Ian&apos;s Wacky Playground of Garbage!
   </h1>
-)
+);
 
-const Home = (props:any) => {
+const Home = (): JSX.Element => {
   return (
     <div className={styles.container}>
       <Head>
@@ -37,19 +37,22 @@ const Home = (props:any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div style={{ display: 'flex', justifyContent: 'center'}}>
-        <Link href={"/api/auth/login"} style={{ marginRight: '15px'}}>Log In</Link>
-        <Link href={"/api/auth/logout"} style={{ marginRight: '15px'}}>Log Out</Link>
-        <Link href={"/protectedPage"}>Protected</Link>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Link href={'/api/auth/login'} style={{ marginRight: '15px' }}>
+          Log In
+        </Link>
+        <Link href={'/api/auth/logout'} style={{ marginRight: '15px' }}>
+          Log Out
+        </Link>
+        <Link href={'/protectedPage'}>Protected</Link>
       </div>
-
-
-      <UserInfoContainer />
-
-      <ContextDisplay/>
 
       <main className={styles.main}>
         <Title />
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <UserInfoContainer />
+          <ContextDisplay />
+        </div>
         <div>
           <FishImage />
         </div>
@@ -59,7 +62,6 @@ const Home = (props:any) => {
         <SomeComponent />
         <RefExample />
       </main>
-
 
       <footer className={styles.footer}>
         <a
@@ -74,14 +76,10 @@ const Home = (props:any) => {
         </a>
       </footer>
     </div>
-  )
-}
-
-
+  );
+};
 
 export default Home;
-
-
 
 // email : "idcargill@gmail.com"
 // email_verified : true

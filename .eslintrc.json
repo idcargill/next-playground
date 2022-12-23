@@ -1,18 +1,23 @@
 {
-  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:prettier/recommended"],
-  "env" : {
+  "env": {
     "browser": true,
-    "es6": true,
-    "node": true
+    "es2021": true
   },
+  "extends": ["plugin:react/recommended", "standard-with-typescript"],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
   },
+  "plugins": ["react"],
   "rules": {
-    "no-invalid-this": "off",
-    "no-label-var": "error",
-    "no-undefined": "error",
-    "no-var": "error",
-    "no-extra-parens": "error",
+    "prefer-const": "error",
+    "no-extra-semi": "warn",
+    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/space-before-function-paren": "off"
   }
 }
