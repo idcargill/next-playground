@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/globals.css'
 import TestingProvider  from '../sections/sharedComponents/UserProvider';
 import { UserProvider } from '@auth0/nextjs-auth0';
