@@ -1,6 +1,6 @@
 import React, { useState, useReducer, useCallback } from 'react';
 
-type ToDo = {
+export type ToDo = {
   id: number;
   description: string;
 }

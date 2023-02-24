@@ -1,5 +1,7 @@
 import React from 'react';
 import TestPageLayout from '../sections/TestPage/TestPageLayout';
+import { ToDoWrapper } from '../sections/TestPage/testContext';
+import ToDoListContainer from '../sections/TestPage/todoListContainer';
 
 interface getNameProps {
   name: string | null;
@@ -17,8 +19,11 @@ const TestPage = (): JSX.Element => {
 
   return (
     <>
-      <h1>Test Page</h1>
-      <TestPageLayout />
+        <h1>Test Page</h1>
+      <ToDoWrapper>
+        <TestPageLayout />
+        <ToDoListContainer />
+      </ToDoWrapper>
     </>
   )
 }
